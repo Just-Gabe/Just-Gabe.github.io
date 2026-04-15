@@ -7430,6 +7430,39 @@ main {
     </script>
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme" rel="stylesheet"/>
+<style>
+/* Custom styles for slides with overflow */
+.slides section:nth-child(4) .slide-background,
+.slides section:nth-child(4) {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+.slides section:nth-child(8) .slide-background,
+.slides section:nth-child(8) {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+.slides section:nth-child(9) .slide-background,
+.slides section:nth-child(9) {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+.slides section:nth-child(18) .slide-background,
+.slides section:nth-child(18) {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+.slides section:nth-child(19) .slide-background,
+.slides section:nth-child(19) {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+/* Ensure images fit within slides */
+.slides section img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+</style>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
@@ -9027,7 +9060,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = false
+            var scroll = true;
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')
@@ -9035,7 +9068,7 @@ require(
                   return $(this).height() > h;
                 })
                 .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
+                .css('overflow-y', 'auto')
                 .css('margin-top', '20px');
             }
         }
